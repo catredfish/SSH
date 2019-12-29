@@ -1,0 +1,110 @@
+.card:not(#legende) {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    min-height:400px;
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+    border-radius:10px;
+    transition:0.5s;
+    height:35em;
+}
+.card:not(#legende):hover {
+    box-shadow:0 30px 70px rgba(0,0,0,.2);
+}
+.card:not(#legende) .box {
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    width:100%;
+}
+.card:not(#legende) .box .img {
+    width:120px;
+    height:120px;
+    margin:0 auto;
+    border-radius:50%;
+}
+.card:not(#legende) .box .img img {
+    width:100%;
+}
+.card:not(#legende) .box h2 {
+    font-size:20px;
+    color:#262626;
+    margin:20px auto;
+}
+.card:not(#legende) .box h2 span {
+    font-size:14px;
+    background:rgb(66,139,202);
+    color:#fff;
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:15px;
+}
+.card:not(#legende) .box p {
+    color:#262626;
+}
+.card:not(#legende) .box span {
+    display:inline-flex;
+}
+.card:not(#legende) .box ul {
+    margin:0;
+    padding:0;
+}
+.card:not(#legende) .box ul li {
+    list-style:none;
+    float:left;
+}
+.card:not(#legende) .box ul li a {
+    display:block;
+    color:#aaa;
+    margin:0 10px;
+    font-size:20px;
+    transition:0.5s;
+    text-align:center;
+}
+.card:not(#legende) .box ul li:hover a {
+    color:rgb(66,139,202);
+    transform:rotateY(360deg);
+}
+
+.modal-body{
+    background-color:#B3E5FC;
+}
+
+.box{
+    height:100%;
+}
+
+h2{
+    margin-top:5em !important;
+}
+
+p{
+    text-align:center!important;
+}
+
+.card:not(#legende){
+    width:100%;
+}
+
+#imgConferencier{
+    border-radius:5% !important;
+}
+
+#reformerExpertise{
+   display: inherit !important;
+}
+
+.box{
+    overflow: auto;
+    max-height: 100%;
+}
+
+#lienEnveloppe{
+    font-size:50px !important;
+}

@@ -1,0 +1,177 @@
+.content{
+  padding-bottom:15em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgb(230,230,230);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 110px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+body{
+    background-image: url(/images/fondAccueil.png) !important;
+    background-size: 40%;
+    background-repeat: repeat;
+}
+
+#centrer{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-70%);
+}
+
+.split {
+    height: 15%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 78%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    letter-spacing: 4px;
+}
+
+.left {
+    left: 0;
+    color:rgb(33,58,143);
+    font-weight:bolder !important;
+    border-right: 5px solid rgb(243,211,119);
+}
+
+.centered p {
+    text-align: left !important;
+    font-size:20px;
+}
+
+.right {
+    right: 0;
+    color: rgb(230,0,125);
+    font-weight:bolder !important;
+}
+
+#gris{
+    color: rgb(77,77,77) !important;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+#hautGauche{
+    float:left;
+    width:10%;
+    position:absolute;
+    top:0;
+    margin-left:10em;
+}
+
+
+/* Ratios */
+@media only screen and (max-device-aspect-ratio: 1080/1920)
+{
+    #centrer{
+        width: 100% !important;
+    }
+    .split {
+        height: 25%;
+        top: 70%;
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #dateEvenement{
+        position: absolute;
+        top: 0;
+        left: 8em!important;
+        width:25%;
+    }
+    .changerLesRights{
+        right: 0!important;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    #dateEvenement{
+        position: absolute;
+        top: 0;
+        margin-left:1em;
+        width:6em;
+    }
+    .changerLesRights{
+       right:20em;
+    }
+}
+
+@media only screen and (max-width: 1176px) {
+    #hautGauche{
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 1768px) {
+    #hautGauche{
+        float: left;
+        width: 10%;
+        position: absolute;
+        top: 5em;
+        margin-left: 0em;
+    }
+}
+
+@media only screen and (min-width: 1360px) {
+  #dateEvenement{
+        position: absolute;
+        top: 0;
+        left: 2em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #btnInscription, #btnConnecter{
+        margin-top:1em;
+    }
+}

@@ -1,0 +1,16 @@
+.table-liste-presence {
+  border-collapse: collapse;
+  width: 1000px!important;
+  border: 1px solid black;
+}
+
+.colonne-liste-presence{
+  border: 1px solid black;
+  width: 50%;
+}
+
+#titreNomAtelier{
+  text-align: center!important;
+  font-size: 150%;
+  background-color: Silver;
+}

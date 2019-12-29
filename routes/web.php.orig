@@ -1,0 +1,71 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+/* Administrateur */
+Route::get('/CreationAtelier','AdministrateurController@VoirCreerAtelier')->name('VoirCreerAtelier');
+Route::post('/Atelier/CreerAtelier','AdministrateurController@CreerAtelier')->name('CreerAtelier');
+Route::get('/AnnulationAtelier', 'AdministrateurController@VoirListeAnnulationAtelier')->name('AnnulationAtelier');
+Route::post('/AnnulationAtelier/Annulation', 'AdministrateurController@AnnulationAtelier');
+Route::get('/EnvoyerRappel', 'AdministrateurController@VoirEnvoyerRappel');
+Route::post('/EnvoyerRappel/EnvoyerRappel', 'AdministrateurController@EnvoyerRappel');
+<<<<<<< HEAD
+Route::get('/CreationConferencier', 'AdministrateurController@VoirCreerConferencier');
+Route::post('/CreerConferencier', 'AdministrateurController@CreerConferencier');
+Route::get('/ErreursCreationConferencier', 'AdministrateurController@VoirErreursCreerConferencier')->name('VoirErreursCreerConferencier');
+Route::get('/ModificationConferencier', 'AdministrateurController@VoirModifierConferencier');
+Route::post('/ModifierConferencier', 'AdministrateurController@ModifierConferencier');
+Route::get('/ErreursModificationConferencier', 'AdministrateurController@VoirErreursModifierConferencier')->name('VoirErreursModifierConferencier');
+=======
+Route::get('/GestionAteliers','AdministrateurController@VoirGestionAteliers')->name('GestionAteliers');
+Route::get('/ModifierAtelier','AdministrateurController@VoirModifierAtelier')->name('VoirModifierAtelier');
+Route::post('/ModifierAtelier/Modifier','AdministrateurController@ModifierAtelier');
+
+/*tout les types d'utilisateurs*/
+Route::post('/AfficherDescriptionAtelier','UtilisateurController@AfficherDescriptionAtelier');
+>>>>>>> 3c8f63b7fdc8bda2d169ce0b2f9e09849c4aa1ef
+
+/* Utilisateur */
+Route::get('/Formation', 'UtilisateurController@VoirFormation');
+Route::get('/ListeAteliers', 'UtilisateurController@VoirListeAteliers')->name('ListeAteliers');
+Route::post('/ListeParticipants', 'UtilisateurController@VoirListeParticipants');
+Route::get('/ListeConferenciers', 'UtilisateurController@VoirListeConferenciers');
+
+
+//atelier
+Route::post('/InscriptionAtelier','UtilisateurController@InscriptionAtelier');
+
+//Liste d'attentes
+Route::post('/InscriptionListeAttentes','UtilisateurController@InscriptionListeAttentes');
+//Compte
+Route::post('/ModifierCompte/Modification','UtilisateurController@ModifierCompte');
+Route::get('/ModifierCompte', 'UtilisateurController@VoirModifierCompte')->name("VoirModifierCompte");
+
+Route::get('/Compte', 'UtilisateurController@VoirCompte');
+Route::post('employees/{id}', ['as' => 'employees', 'uses' => 'mot@getemployee']);
+/* Visiteur */
+Route::get('/Connexion', 'VisiteurController@VoirConnexion')->name('Connexion');
+Route::get('/Deconnexion', 'VisiteurController@Deconnexion')->name('Deconnexion');
+Route::get('/Inscription', 'VisiteurController@VoirInscription')->name("Inscription");
+Route::get('/Accueil', 'VisiteurController@VoirAccueil')->name('voirAccueil');
+Route::get('/', 'VisiteurController@VoirAccueil');
+
+/* visiteur Formulaires d'inscription */
+Route::get('/FormulaireInscription','VisiteurController@VoirFormulaireInscription');
+
+Route::get('/Form', function () {
+    return view('Shared/Form_Layout');
+});
+Route::post('/Inscription/CreerCompte', "VisiteurController@CreerCompte");
+Route::post('/Connexion/Connexion', "VisiteurController@Connexion");
+
+Route::get('/Email', 'UtilisateurController@EnvoyerRappelListeAttentes');

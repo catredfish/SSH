@@ -1,0 +1,14 @@
+#barreNavigation{
+	position:fixed!important;
+	top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    height:5em;
+}
+
+.site-navbar{
+	height:100%;
+}
+
+#content{
+	margin-top:5em;
+}

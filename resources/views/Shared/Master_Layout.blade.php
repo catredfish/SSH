@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Semaine des sciences humaines</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/Layout.css">
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="css/fl-bigmug-line.css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Shared/Master_Layout.css">
+        @yield('styles')
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        
+        <!-- Barre de navigation -->
+        <footer class="site-wrap">
+            <div class="site-mobile-menu">
+                <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close mt-3">
+                        <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
+            </div>
+            
+            <div id="barreNavigation" class="site-navbar-wrap bg-white">
+                
+                <div class="site-navbar bg-dark">
+                    <img src="images/logoInfo.png" style="float:right;margin-top:11px;margin-right:11px;">
+                    <div class="container py-1">
+
+                        <!-- Logo du Département de l'informatique -->
+                        
+                        <div class="row align-items-center">
+                            <div class="col-4 col-md-6 col-lg-9">
+                                <nav class="site-navigation text-left" role="navigation">
+                                    <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3">
+                                        <a href="#" class="site-menu-toggle js-menu-toggle text-white"><span
+                                                class="icon-menu h3"></span></a>
+                                    </div>
+                                    <ul id="menuNavigation" class="site-menu js-clone-nav d-none d-lg-block">
+                                        <li class="active"><a href="Accueil" id="accueilNaviation">Accueil</a></li>
+
+                                        <!--Vérifie si l'usager est un utilisateur -->
+                                        @if (Session::get('idTypeDeCompte') == 1)
+                                        <li><a  href="{{route('ListeAteliers',['numeroCampus' => 1, 'ongletSelectionne' => 1])}}">Ateliers</a></li>
+                                        <li><a  href="{{route('ListeConferenciers',['ongletChoisi' => 1])}}">Conférenciers et conférencières</a></li>
+                                        <li><a href="{{route('VoirModifierCompte',['Id' => Session::get('idCompte')])}}">Compte</a></li>
+                                        @endif
+
+                                        <!-- Vérifie si l'utilisateur est un administrateur -->
+                                        @if (Session::get('idTypeDeCompte') >= 2)
+                                            <li><a href="{{route('GestionAteliers',['numeroCampus' => 1])}}">Gestion des ateliers</a></li>
+                                            <li><a  href="{{route('ListeConferenciers',['ongletChoisi' => 1])}}">Gestion des conférenciers et conférencières</a></li>
+                                        @endif
+
+                                        <!-- Vérifie si l'utilisateur est un super administrateur -->
+                                        @if(Session::get('idTypeDeCompte') == 3)
+                                            <li class="dropdown">
+                                                <div class="dropdown">
+                                                    <button class="dropbtn">Gestion des comptes
+                                                        <i class="fa fa-caret-down"></i>
+                                                    </button>
+                                                    <div class="dropdown-content">
+                                                        <a href="{{route('VoirModifierCompte',['Id' => Session::get('idCompte')])}}">Personnel</a>
+                                                        <a href="{{route('ListeAdministrateurs')}}">Administrateurs</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        <!-- Vérifie si l'utilisateur est un administrateur -->
+                                        @elseif(Session::get('idTypeDeCompte') == 2)
+                                            <li><a href="{{route('VoirModifierCompte',['Id' => Session::get('idCompte')])}}">Gestion du compte</a></li>
+                                        @endif
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!--Vérifie si l'usager est connecté-->
+                            @if (Session::get('idCompte') != "" && Session::get('idTypeDeCompte') != "")
+                            
+                            <div class="col-8 col-md-6 col-lg-3 text-right">
+                                <a href="Deconnexion"
+                                   class="btn btn-primary rounded-0 py-2 px-4" id="btnDeconnecter">DÉCONNEXION</a>
+                                   
+                            </div>
+                            @else
+                            
+                            <div class="col-8 col-md-6 col-lg-3 text-right">
+                                <a href="Inscription"
+                                   class="btn btn-success rounded-0 text-white py-2 px-4" id="btnInscription">INSCRIPTION</a>
+                                <a href="Connexion"
+                                   class="btn btn-primary rounded-0 py-2 px-4" id="btnConnecter">CONNEXION</a>
+                                   
+                                   
+                            </div>
+                            @endif
+
+                            <!-- Logo du Cégep -->
+                            <a href="http://www.cegepoutaouais.qc.ca/" target="_blank"><img src="images/logoCegep.png" id="logoCegep"></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenu -->
+            <div id="content" >
+                @yield('content')
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">© <?php echo date("Y"); ?> <a href="mailto:ScripTech.Team@gmail.com">ScripTech</a> – Tous droits réservés</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/Shared/Master_Layout.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    </body>
+</html>
