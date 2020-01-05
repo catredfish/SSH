@@ -20,6 +20,9 @@ class CreateComptesTable extends Migration
           $table->string('Prenom');
           $table->string('Courriel');
           $table->string('MotDePasse');
+          $table->string('Jeton');
+          $table->unsignedInteger('NombreJetonEnvoye');
+          $table->dateTime('DateJetonEnvoye');
           $table->boolean('Actif');
 
           $table->unsignedInteger('idTypeConnexion');

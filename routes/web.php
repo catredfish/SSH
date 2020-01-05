@@ -48,6 +48,7 @@ Route::post('/VoirEnvoyerRappelGenerique','AdministrateurController@VoirEnvoyerR
 /*tout les types d'utilisateurs*/
 Route::post('/AfficherDescriptionAtelier','UtilisateurController@AfficherDescriptionAtelier');
 Route::get('/VoirMessageErreur','VisiteurController@VoirMessageErreur')->name('MessageErreur');
+Route::get('/VoirMessageSucces','VisiteurController@VoirMessageSucces')->name('MessageSucces');
 
 /* Utilisateur */
 Route::get('/Formation', 'UtilisateurController@VoirFormation');
@@ -81,7 +82,10 @@ Route::get('/Deconnexion', 'VisiteurController@Deconnexion')->name('Deconnexion'
 Route::get('/Inscription', 'VisiteurController@VoirInscription')->name("Inscription");
 Route::get('/Accueil', 'VisiteurController@VoirAccueil')->name('voirAccueil');
 Route::get('/', 'VisiteurController@VoirAccueil');
-
+Route::get('/OublieMotDePasse', 'VisiteurController@VoirOublieMotDePasse')->name('VoirOublieMotDePasse');
+Route::post('/OublieMotDePasse/EnvoyerCourrielOublieMotDePasse', 'VisiteurController@EnvoyerCourrielOublieMotDePasse')->name('EnvoyerCourrielOublieMotDePasse');
+Route::get('/ReinitialisationOublieMotDePasse','VisiteurController@VoirReinitialisationOublieMotDePasse')->name('VoirReinitialisationOublieMotDePasse');
+Route::post('/ReinitialisationOublieMotDePasse/ReinitialisationOublieMotDePasse', 'VisiteurController@ReinitialisationOublieMotDePasse')->name('ReinitialisationOublieMotDePasse');
 /* visiteur Formulaires d'inscription */
 Route::get('/FormulaireInscription','VisiteurController@VoirFormulaireInscription');
 Route::get('/Form', function () {

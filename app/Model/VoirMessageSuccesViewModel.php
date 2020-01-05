@@ -4,7 +4,8 @@ namespace App\Model;
 
 use Illuminate\Support\Facades\DB;
 use App\Constantes;
-class VoirMessageErreurViewModel {
+
+class VoirMessageSuccesViewModel {
 
     //Propriétés
     private $titre;
@@ -30,4 +31,5 @@ class VoirMessageErreurViewModel {
     public function getRetourAccueil(){
         return $this->retourAccueil;
     }
+    
 }

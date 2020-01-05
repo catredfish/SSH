@@ -47,6 +47,8 @@ class Constantes
     //Lien_Atelier_Compte
     public static $COLUMN_ID_COMPTE_LIEN_ATELIER_COMPTE = "idCompteLienAtelierCompte";
     public static $COLUMN_ID_ATELIER_LIEN_ATELIER_COMPTE = "idAtelierLienAtelierCompte";
+    public static $COLUMN_COURRIEL_COMPTE = "Courriel";
+    public static $COLUMN_JETON_COMPTE = "Jeton";
 
     //Liste d'attentes
     public static $COLUMN_ID_ATELIER_LISTE_ATTENTES = "idAtelierListeAttentes";
@@ -54,6 +56,7 @@ class Constantes
 
     //Comptes
     public static $COLUMN_ID = "id";
+    public static $COLUMN_MOT_DE_PASSE_COMPTE = "MotDePasse";
     public static $COLUMN_NUMERO_IDENTIFICATION = "NumeroIdentification";
     public static $COLUMN_NOM = "Nom";
     public static $COLUMN_PRENOM = "Prenom";
@@ -85,4 +88,12 @@ class Constantes
     //Type de connexions
     public static $COLUMN_ID_TYPE_DE_CONNEXIONS = "id";
     public static $COLUMN_NOM_TYPE_DE_CONNEXIONS = "Nom";
+    
+    //Message et titre de succès
+    public static $TITRE_DEFAUT_SUCCES = "Succès!";
+    public static $MESSAGE_DEFAUT_SUCCES = "Votre action précédente s'est effectuée avec succès.";
+    
+    //Message et titre d'erreur
+    public static $TITRE_DEFAUT_ERREUR = "Oups!";
+    public static $MESSAGE_DEFAUT_ERREUR = "Une erreur est survenue lors de votre action précédente.";
 }

@@ -216,6 +216,23 @@ class AppServiceProvider extends ServiceProvider {
 
             return true;
         },"L'un des conférenciers que vous avez sélectionné n'existe pas dans la base de données.");
+        
+        
+        Validator::extend('validerPresenceCourriel', function ($field, $value, $parameters, $validator) {
+
+            //Obtient le courriel
+            $courriel = array_get($validator->getData(), $parameters[0]);
+
+            //Si le courriel est présent dans la base de données, alors le courriel est validé
+            if(count(DB::table(Constantes::$TABLE_COMPTES)->where(Constantes::$COLUMN_COURRIEL_COMPTE, '=', $courriel)->get()) == 1){
+                return true;
+            }
+
+            //Sinon il est invalide.
+            else{
+                return false;
+            }
+        },"Le courriel que vous avez entré est erroné ou n'existe pas. Veuillez vous assurer que vous avez entré une adresse courriel valide.");
     }
 
     /**
