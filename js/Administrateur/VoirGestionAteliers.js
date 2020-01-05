@@ -133,6 +133,14 @@ function ouvrirModalCreer(){
     });
 }
 
+// Permet de prévenir le problème graphique survenant avec les modales
+function supprimerRecreerModal() {
+    $("#modal").remove();
+    $(".modal-backdrop").remove();
+    $("#sectionPourModale").append("<div class=\"modal fade\" id=\"modal\" role=\"dialog\"></div>");
+}
+
+
 function voirListeParticipants(numeroAtelier){
   //Inspiration https://stackoverflow.com/questions/41981922/minimum-working-example-for-ajax-post-in-laravel-5-3
   var CSRF_TOKEN = $('[name=_token]').val();
@@ -203,9 +211,3 @@ $("body").on("change", function(){
 });
 
 
-// Permet de prévenir le problème graphique survenant avec les modales
-function supprimerRecreerModal() {
-    $("#modal").remove();
-    $(".modal-backdrop").remove();
-    $("#sectionPourModale").append("<div class=\"modal fade\" id=\"modal\" role=\"dialog\"></div>");
-}

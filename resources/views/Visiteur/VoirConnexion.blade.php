@@ -57,6 +57,9 @@
           <div class="row">
             <a href="/Inscription" class="create-account">S'inscrire </a>
           </div>
+          <div class="row">
+            <a href="/OublieMotDePasse" class="create-account">J'ai oublié mon mot de passe </a>
+          </div>  
           <div class="row submit-row">
             <input hidden = "hidden" id="type-connexion" name="typeConnexion" value="<?php if(Session::get('typeConnexion') == null){echo "etudiant";} else{echo (Session::get('typeConnexion'));}?>">
             <button type="submit" class="btn btn-block submit-form">Se connecter</button>

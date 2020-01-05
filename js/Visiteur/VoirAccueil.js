@@ -66,4 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
   footer.innerHTML="";
   footer.appendChild(footerImg);
   footerImg.style.width = "30%";
+  
+  
 }, false);
+
+

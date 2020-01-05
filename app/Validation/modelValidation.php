@@ -299,4 +299,36 @@ class ModelValidation extends FormRequest {
             'Expertise.required' => "L'expertise est requise.",
         ];
     }
+    
+    //Règles de validation pour envoyer un courriel d'oublie de mot de passe
+    public static function EnvoyerCourrielOublieMotDePasseValidation() {
+        return [
+            'Courriel' => 'required|email||validerPresenceCourriel:Courriel'
+        ];
+    }
+    
+    //Messages d'erreur pour envoyer un courriel d'oublie de mot de passe
+    public static function EnvoyerCourrielOublieMotDePasseValidationMessages() {
+        return [
+            'Courriel.email' => "Le format du courriel est non valide."
+        ];
+    }
+    
+    
+    //Règles de validation d'un compte
+    public static function ReinitialisationOublieMotDePasse() {
+        return [
+            'MotDePasse' => ['required', 'regex:/^(?=.*[A-Z\x{00C0}-\x{00DC}])(?=.*[\d])[A-Z\x{00C0}-\x{00DC}a-z\x{00E0}-\x{00FC}\d@$!%*?&]{5,16}$/'],
+            'ConfirmationMotDePasse' => 'same:MotDePasse'
+        ];
+    }
+
+    //Messages d'erreur d'un compte
+    public static function ReinitialisationOublieMotDePasseMessages() {
+        return [
+            'MotDePasse.required' => 'Le mot de passe est requis.',
+            'MotDePasse.regex' => "Le mot de passe doit contenir de 5 à 16 caractères et doit comprendre une lettre majuscule ainsi qu'un nombre.",
+            'ConfirmationMotDePasse.same' => 'Le mot de passe et la confirmation du mot de passe ne sont pas identiques.'
+        ];
+    }
 }

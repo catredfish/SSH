@@ -38,9 +38,11 @@
             <p>25 FÉVRIER <br/>
                 AU 15 MARS</p>
         </div>
-    </div>
+    </div>  
 </div>
 
+
+ 
 <img src="images/footerAccueil.PNG" id="basCentre">
 
 

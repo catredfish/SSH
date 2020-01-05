@@ -175,3 +175,20 @@ body{
         margin-top:1em;
     }
 }
+
+#idTitreModal{
+	color:#00838F;
+}
+
+#modal{
+	overflow: hidden
+}
+
+#modalAnnulation, #modalVoirDescriptionAtelier, #modalVoirListeParticipants, #modalModifierAtelier{
+	overflow: hidden
+}
+
+#idContenu, #contenuModalVoirListeParticipants, #contenuModalModifierAtelier, #contenuModalModifierAtelier{
+	max-height: 40em;
+	overflow-y: auto;
+}
